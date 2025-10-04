@@ -1,1 +1,1 @@
-# deteksi_berita_hoax-CCI_THE_HACK
+# Deteksi Berita Hoax - TheHack 2025
