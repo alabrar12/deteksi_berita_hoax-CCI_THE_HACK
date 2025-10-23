@@ -7,30 +7,7 @@ Sistem dibangun dengan arsitektur **client-server** dan dijalankan secara **loka
 
 ## 🚀 Arsitektur Sistem
 
-Aplikasi ini terdiri dari tiga komponen utama:
-
-### 🔹 1. Frontend (Client Side)
-- Dibangun menggunakan **Next.js** (React framework) dengan dukungan **JavaScript** dan **Tailwind CSS**.  
-- Pengguna dapat memasukkan teks berita atau URL berita, yang kemudian dikirim ke server backend melalui **REST API endpoint**.  
-- Hasil prediksi ditampilkan secara *real-time* dalam bentuk label:
-  - **"Hoax"** atau **"Valid"**
-  - Disertai *confidence score* (tingkat kepercayaan model).  
-- Antarmuka juga menyediakan fitur pencarian berita menggunakan **SearXNG** untuk membantu pengguna melakukan verifikasi silang terhadap berita yang dimasukkan.
-
----
-
-### 🔹 2. Backend (Server Side)
-- Dikembangkan menggunakan **Node.js** dengan framework **Express.js**.  
-- Berfungsi sebagai REST API server yang:
-  - Menerima input teks dari frontend.
-  - Mengirim teks ke model AI berbasis Python untuk diprediksi.
-  - Mengembalikan hasil prediksi ke frontend dalam format JSON.  
-- Backend juga menangani routing API, autentikasi dasar (jika diperlukan), dan koneksi dengan search engine eksternal.  
-- Sistem ini tidak menggunakan database permanen — input dan hasil prediksi diproses langsung tanpa penyimpanan.
-
----
-
-### 🔹 3. Model Kecerdasan Artifisial (AI Engine)
+### 🔹1. Model Kecerdasan Artifisial (AI Engine)
 - Dikembangkan menggunakan **Python** dengan framework **PyTorch** dan **Hugging Face Transformers**.  
 - Model utama adalah **IndoBERT**, sebuah model *transformer pre-trained* yang diadaptasi khusus untuk bahasa Indonesia.  
 - Dataset pelatihan terdiri atas kumpulan berita yang telah dilabeli sebagai hoax dan non-hoax.  
@@ -45,7 +22,7 @@ Aplikasi ini terdiri dari tiga komponen utama:
 
 ---
 
-### 🔹 4. Search Engine (Eksternal)
+### 🔹 2. Search Engine (Eksternal)
 - Sistem terhubung dengan **SearXNG**, sebuah *metasearch engine* open-source yang di-*deploy* pada **Microsoft Azure**.  
 - Fitur ini membantu pengguna mencari berita dari sumber kredibel sebagai langkah tambahan dalam proses verifikasi.  
 - Komunikasi antara sistem dan SearXNG dilakukan menggunakan **API HTTP** (JSON / query string).
@@ -65,15 +42,7 @@ Seluruh komponen sistem dijalankan secara **lokal** selama tahap pengembangan.
 
 ## 💻 Bahasa Pemrograman dan Framework
 
-Aplikasi ini dikembangkan dengan kombinasi berbagai bahasa dan framework modern, yaitu:  
-
-**Frontend:**  
-- Dibangun menggunakan **JavaScript** dengan framework **Next.js** dan styling **Tailwind CSS**.  
-- Menyediakan antarmuka yang cepat, responsif, dan ramah pengguna.  
-
-**Backend:**  
-- Dikembangkan menggunakan **Node.js** dan framework **Express.js**.  
-- Berfungsi sebagai REST API server yang menjembatani komunikasi antara frontend dan model AI.  
+Aplikasi ini dikembangkan dengan kombinasi berbagai bahasa dan framework modern, yaitu:   
 
 **Model AI:**  
 - Menggunakan **Python** sebagai bahasa utama dengan framework **PyTorch** dan **Hugging Face Transformers**.  
@@ -97,9 +66,7 @@ Selama pengembangan proyek, digunakan beberapa tools dan environment pendukung b
 - **Visual Studio Code** → Sebagai code editor utama untuk menulis dan menguji kode.  
 - **Node.js** dan **Python Runtime** → Untuk menjalankan server backend dan model AI.  
 - **Git & GitHub** → Untuk version control dan kolaborasi pengembangan tim.  
-- **npm** dan **pip** → Untuk mengelola dependensi package di Node.js dan Python.  
 - **Anaconda / venv** → Untuk mengatur environment Python selama pelatihan model.  
-- **Postman** → Untuk melakukan pengujian endpoint REST API antar komponen sistem.  
 - **Microsoft Azure (SearXNG)** → Sebagai host untuk search engine eksternal.  
 - **Google Chrome / Edge** → Untuk menjalankan dan menguji tampilan aplikasi web di sisi frontend.  
 
